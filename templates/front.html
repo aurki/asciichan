@@ -1,31 +1,36 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>/ascii/</title>
-        <link rel="stylesheet" type="text/css" href="/css/main.css">
-    </head>
-    <body>
-        <h1>/ascii/</h1>
+{% extends "base.html" %}
+{% block title %} - ascii Art{% endblock %}
+{% block content %}
+<h2>/ascii/</h2>
+<div class="wrapper">
+    <div class="column1">
         <form method="post">
             <label>
                 <div>title</div>
-                <input type="text" name="title" value="{{title}}">
+                <input class="art-input" type="text" name="title" value="{{title}}">
             </label>
             <label>
                 <div>art</div>
-                <textarea name="art">{{art}}</textarea>
+                <textarea class="art-input" name="art">{{art}}</textarea>
             </label>
             <div class="error">{{error}}</div>
-            <input type="submit">
+            <input type="submit" value="Add">
         </form>
-        <hr>
-        {% for art in arts %}
-        <div class="art">
-            <div class="art-title">{{art.title}}</div>
-<pre class="art-body">{{art.art}}</pre>
-        </div>
+    </div>
+    <div class="column2">
+        {% if img_url %}
+            <img class="map float-right" src="{{img_url}}">
+        {% endif %}
+    </div>
+</div>
+
+<div class="clearfix"></div>
+
+<hr>
+{% for art in arts %}
+<div class="art">
+    <div class="art-title">{{art.title}}</div>
+    <pre class="art-body">{{art.art}}</pre>
+</div>
 {% endfor %}
-    </body>
-</html>
+{% endblock %}

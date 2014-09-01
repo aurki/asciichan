@@ -1,4 +1,4 @@
-application: asciichan
+application: asciichan2
 version: 1
 runtime: python27
 api_version: 1
@@ -10,6 +10,7 @@ handlers:
   upload: favicon\.ico
 
 - url: /css
+  mime_type: text/css
   static_dir: css
 
 - url: /.*

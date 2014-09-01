@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Tula{% block title %}{% endblock %}</title>
+            <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" href="/css/main.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+            <script>
+                $(function() {
+                    var pull        = $('#pull');
+                        menu        = $('.main-nav ul');
+                        menuHeight  = menu.height();
+
+                    $(pull).on('click', function(e) {
+                        e.preventDefault();
+                        menu.slideToggle();
+                    });
+
+                    $(window).resize(function(){
+                        var w = $(window).width();
+                        if(w > 320 && menu.is(':hidden')) {
+                            menu.removeAttr('style');
+                        }
+                    });
+                });
+            </script>
+        {% endblock %}
+    </head>
+    <body>
+        <header class="main-header">
+            <div class="body">
+                <h1 class="main-logo">Tula - Web Development</h1>
+            </div>
+            <nav class="main-nav cf">
+                <ul class="cf">
+                    <li><a href="/">Inicio</a></li>
+                    <a href="#" id="pull">Menu</a>
+                </ul>
+            </nav>
+        </header>
+        <div class="contenido body">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <footer class="clearfix body">
+            {% block footer %}
+                <a href="https://www.udacity.com/" class="footer">Udacity</a> Web Development course homework
+            {% endblock %}
+        </footer>
+    </body>
+    </html>

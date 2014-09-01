@@ -1,30 +1,259 @@
-body {
-    font-family: sans-serif;
-    width: 800px;
+/***++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++   Header   ++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++****/
+
+.main-header {
+    margin-bottom: 30px;
+}
+/*.nav a {
+    display: inline-block;
+    padding: 5px 20px;
+}
+.nav a:hover {
+    color: #fff;
+    background-color: #aa0000;
+}*/
+
+/***++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++    Menu  responsive   +++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++***/
+
+.cf:before, .cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+.cf {
+    *zoom: 1;
+}
+.main-nav {
+    height: 40px;
+    width: 100%;
+    background-color: #aa0000;
+}
+.main-nav ul {
+    padding: 0;
     margin: 0 auto;
-    padding: 10px;
+    width: 80%;
+    height: 40px;
+}
+.main-nav li {
+    display: block;
+    float: left;
+    width: 16%;
+    border-right: 1px solid #fff;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    text-align: center;
+}
+.main-nav li:last-child {
+    border-right: 0;
+}
+.main-nav a {
+    color: #fff;
+    background-color: #aa0000;
+    display: block;
+    line-height: 40px;
+}
+.main-nav a:hover, .main-nav a:active {
+    background-color: #fff;
+    color: #aa0000;
+}
+.main-nav a#pull {
+    display: none;
+}
+@media screen and (max-width: 700px) {
+    .main-nav {
+        height: auto;
+    }
+    .main-nav ul {
+        width: 100%;
+        display: block;
+        height: auto;
+    }
+    .main-nav li {
+        width: 50%;
+        float: left;
+        position: relative;
+    }
+    .main-nav li a {
+        border-bottom: 1px solid #fff;
+        box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+    }
+    .main-nav li:last-child a {
+        border-right: 1px solid #fff;
+    }
+    .main-nav a {
+        text-align: left;
+        width: 100%;
+        text-indent: 25px;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .main-nav {
+        /*border-bottom: 0;*/
+        background-color: rgba(170,0,0,0.55);
+    }
+    .main-nav ul {
+        display: none;
+        height: auto;
+    }
+    .main-nav a {
+        background-color: rgba(170,0,0,0.55);
+    }
+    .main-nav a#pull {
+        display: block;
+        color: #fff;
+        background-color: #aa0000;
+        width: 100%;
+        position: relative;
+    }
+    .main-nav a#pull:after {
+        content: "";
+        background: url('/css/nav-icon.png') no-repeat;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+    }
+}
+@media only screen and (max-width : 320px) {
+    .main-nav li {
+        display: block;
+        float: none;
+        width: 100%;
+    }
+    .main-nav li a {
+        border-bottom: 1px solid #fff;
+    }
+}
+
+/***++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++   General   ++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++***/
+
+body {
+    font-family: lato, sans-serif;
+    color: #4f4e4e;
+    margin: 0 auto;
+    padding: 0;
+}
+.body {
+    width: 80%;
+    margin: 0 auto;
+}
+a {
+    background-color: #fff;
+    color: #aa0000;
+    text-decoration: none;
+}
+a:hover {
+    background-color: #aa0000;
+    color: #fff;
 }
 .error {
     font-style: italic;
     color: red;
 }
+.ok {
+    font-style: italic;
+    color: blue;
+}
+.span {
+    width: 125px;
+    display: inline-block;
+    text-align: right;
+}
 label {
     display: block;
-    font-size: 20px;
+}
+label + label {
+    margin-bottom: 16px;
 }
 input[type=text] {
-    width: 400px;
-    font-size: 20px;
+    width: 300px;
     padding: 2px;
 }
+input[type=password] {
+    width: 300px;
+    padding: 2px;
+}
+input[type=submit], .button {
+    font-size: 1rem;
+    padding: 5px 20px;
+    margin: 0;
+    border: 0;
+    background-color: #aa0000;
+    color: #fff;
+    cursor: pointer;
+}
+input[type=submit]:hover, .button:hover {
+    background: #fff;
+    color: #aa0000;
+}
 textarea {
-    width: 400px;
+    width: 300px;
     height: 200px;
+}
+.boton {
+    padding: 5px 20px;
+    margin: 0;
+}
+.peque {
+    width: 70px !important;
+    display: inline-block;
+}
+.medio {
+    width: 75% !important;
+}
+.ancho {
+    width: 100% !important;
+    height: 100px;
+}
+
+/***++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++   Ascii Art   +++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++***/
+
+.wrapper {
+    width: 100%;
+
+}
+.art-input {
+    width: 100% !important;
+}
+.map {
+    width: 100%;
+    padding-top: 20px;
+}
+.column1, .column2 {
+    width: 50%;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.column2 {
+    padding-left: 1.5rem;
+}
+@media screen and (max-width: 700px) {
+    .column1, .column2 {
+        width: 100%;
+    }
+    .column2 {
+        padding-left: 0;
+    }
+}
+#art {
     font-size: 17px;
     font-family: monospace;
-}
-input[type=submit] {
-    font-size: 24px;
 }
 hr {
     margin: 20px auto;
@@ -39,4 +268,49 @@ hr {
 .art-body {
     margin: 0;
     font-size: 17px;
+}
+
+/***++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++   Blog   ++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++***/
+
+.content {
+    margin-bottom: 32px;
+    white-space: pre-wrap;
+}
+.subject {
+    border-bottom: 2px dotted #aa0000;
+}
+.fecha {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+/***++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++   Footer   +++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++***/
+
+footer {
+    font-size: 0.8rem;
+    font-style: italic;
+    text-align: center;
+    margin: 32px;
+}
+.footer {
+    padding-bottom: 32px;
+}
+.information-line {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.float-left {
+    float: left;
+    padding-right: 5px;
+}
+.float-right {
+    float: right;
+}
+.clearfix {
+    clear: both;
+    padding-top: 1rem;
 }
